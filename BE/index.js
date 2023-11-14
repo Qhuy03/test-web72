@@ -9,6 +9,7 @@ app.use('/inventories', inventoriesRouter)
 app.use('/user', userRouter)
 app.use('/order', orderRouter)
 
+
 app.listen(3000, () => {
   console.log("App is running at 3000");
   connectToDb();
