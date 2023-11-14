@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ addTask }) => {
+const Form = ({ language, addTask }) => {
   const [taskText, setTaskText] = useState("");
 
   const handleSubmit = (e) => {
@@ -14,11 +14,11 @@ const Form = ({ addTask }) => {
   return (
     <form onSubmit={handleSubmit} className="form">
       <input
-        placeholder="Enter task ..."
+        placeholder={language === 'en' ? "Enter task ..." : "Nhập nhiệp vụ"}
         value={taskText}
         onChange={(e) => setTaskText(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <button type="submit">{language === 'en' ? "Submit" : "Gửi"}</button>
     </form>
   );
 };
